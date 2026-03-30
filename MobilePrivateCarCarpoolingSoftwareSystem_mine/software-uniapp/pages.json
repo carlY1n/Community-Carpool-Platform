@@ -1,0 +1,103 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "拼车首页",
+				"disableScroll": true  // ✅ 禁止滚动
+			}
+		},
+		{
+			"path": "pages/admin/user",
+			"style": {
+				"navigationBarTitleText": "用户管理"
+			}
+		},
+		{
+			"path": "pages/searchTrip/searchTrip",
+			"style": {
+				"navigationBarTitleText": "查找行程"
+			}
+		},
+		{
+			"path": "pages/publishTrip/publishTrip",
+			"style": {
+				"navigationBarTitleText": "发布行程",
+				"disableScroll": true  // ✅ 禁止滚动
+			}
+		},
+		{
+			"path": "pages/carManage/carManage",
+			"style": {
+				"navigationBarTitleText": "车辆管理"
+			}
+		},
+		{
+			"path": "pages/admin/carAudit",
+			"style": {
+				"navigationBarTitleText": "车辆审核"
+			}
+		},
+		{
+			"path": "pages/myOrders/myOrders",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/profile/profile",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/complaints/complaints",
+			"style": {
+				"navigationBarTitleText": "投诉建议"
+			}
+		},
+		{
+			"path": "pages/myTrips/myTrips",
+			"style": {
+				"navigationBarTitleText": "我的行程"
+			}
+		},
+		{
+			"path": "pages/admin/complaint",
+			"style": {
+				"navigationBarTitleText": "投诉处理"
+			}
+		},
+		{
+			"path": "pages/admin/trip",
+			"style": {
+				"navigationBarTitleText": "行程管理"
+			}
+		},
+		{
+			"path": "pages/chat/chat",
+			"style": {
+				"navigationBarTitleText": "聊天"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "拼车系统",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+} 

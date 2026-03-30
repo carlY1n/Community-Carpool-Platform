@@ -1,0 +1,133 @@
+version: '3.8'
+
+services:
+  # Locust主节点
+  locust-master:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: locust-master
+    ports:
+      - "8089:8089"  # Web UI端口
+      - "5557:5557"  # Master通信端口
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    environment:
+      - LOCUST_MODE=master
+      - LOCUST_HOST=http://host.docker.internal:8888
+      - LOCUST_WEB_PORT=8089
+      - LOCUST_MASTER_BIND_PORT=5557
+    command: >
+      locust
+      --master
+      --web-port=8089
+      --master-bind-port=5557
+      --host=http://host.docker.internal:8888
+    networks:
+      - locust-network
+    depends_on:
+      - redis
+
+  # Locust工作节点1
+  locust-worker-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: locust-worker-1
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    environment:
+      - LOCUST_MODE=worker
+      - LOCUST_MASTER_HOST=locust-master
+      - LOCUST_MASTER_PORT=5557
+    command: >
+      locust
+      --worker
+      --master-host=locust-master
+      --master-port=5557
+    networks:
+      - locust-network
+    depends_on:
+      - locust-master
+
+  # Locust工作节点2
+  locust-worker-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: locust-worker-2
+    volumes:
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+    environment:
+      - LOCUST_MODE=worker
+      - LOCUST_MASTER_HOST=locust-master
+      - LOCUST_MASTER_PORT=5557
+    command: >
+      locust
+      --worker
+      --master-host=locust-master
+      --master-port=5557
+    networks:
+      - locust-network
+    depends_on:
+      - locust-master
+
+  # Redis缓存（可选，用于共享数据）
+  redis:
+    image: redis:7-alpine
+    container_name: locust-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - locust-network
+
+  # 监控服务（可选）
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: locust-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - locust-network
+
+  # Grafana仪表板（可选）
+  grafana:
+    image: grafana/grafana:latest
+    container_name: locust-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+      - GF_USERS_ALLOW_SIGN_UP=false
+    networks:
+      - locust-network
+    depends_on:
+      - prometheus
+
+networks:
+  locust-network:
+    driver: bridge
+
+volumes:
+  redis-data:
+  prometheus-data:
+  grafana-data: 

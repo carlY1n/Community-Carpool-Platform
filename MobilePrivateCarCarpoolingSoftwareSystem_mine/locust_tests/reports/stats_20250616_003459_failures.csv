@@ -1,0 +1,24 @@
+Method,Name,Error,Occurrences
+GET,/api/order/passenger/44,CatchResponseError('查看订单失败: 404'),2
+GET,/api/order/passenger/12,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/31,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/49,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/15,CatchResponseError('查看订单失败: 404'),1
+POST,/api/order/apply,CatchResponseError('创建订单请求失败: 500'),13
+POST,/api/trip/publish,CatchResponseError('发布行程请求失败: 500'),14
+GET,/api/order/passenger/78,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/60,CatchResponseError('查看订单失败: 404'),2
+GET,/api/order/passenger/70,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/11,CatchResponseError('查看订单失败: 404'),1
+POST,/api/trip/cancel/6?driverId=75,CatchResponseError('取消行程失败: 403'),1
+GET,/api/order/passenger/52,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/20,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/26,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/23,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/17,CatchResponseError('查看订单失败: 404'),1
+POST,/api/user/login,CatchResponseError('登录失败: 手机号或密码错误'),5
+GET,/api/order/passenger/7,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/38,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/91,CatchResponseError('查看订单失败: 404'),1
+GET,/api/order/passenger/50,CatchResponseError('查看订单失败: 404'),1
+POST,/api/trip/cancel/29?driverId=70,CatchResponseError('取消行程失败: 403'),1

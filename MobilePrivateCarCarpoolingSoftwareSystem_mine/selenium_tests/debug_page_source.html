@@ -1,0 +1,166 @@
+<html lang="zh-CN" style="--status-bar-height: 0px; --top-window-height: 0px; --window-left: 0px; --window-right: 0px; --window-margin: 0px; --window-top: calc(var(--top-window-height) + calc(44px + env(safe-area-inset-top))); --window-bottom: 0px;"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>登录</title>
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+            document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script><meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+        <link rel="stylesheet" href="/static/index.2da1efab.css">
+    <style type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+</style><script charset="utf-8" src="/static/js/pages-admin-carAudit~pages-admin-complaint~pages-admin-trip~pages-admin-user~pages-carManage-carMana~966d9b7f.js"></script><script charset="utf-8" src="/static/js/pages-login-login.js"></script><style type="text/css">.uni-app--showtabbar uni-page-wrapper {
+                    display: block;
+                    height: calc(100% - 50px);
+                    height: calc(100% - 50px - constant(safe-area-inset-bottom));
+                    height: calc(100% - 50px - env(safe-area-inset-bottom));
+                  }
+.uni-app--showtabbar uni-page-wrapper::after {
+                  content: "";
+                  display: block;
+                  width: 100%;
+                  height: 50px;
+                  height: calc(50px + constant(safe-area-inset-bottom));
+                  height: calc(50px + env(safe-area-inset-bottom));
+                }
+.uni-app--showtabbar uni-page-head[uni-page-head-type="default"] ~ uni-page-wrapper {
+                  height: calc(100% - 44px - 50px);
+                  height: calc(100% - 44px - constant(safe-area-inset-top) - 50px - constant(safe-area-inset-bottom));
+                  height: calc(100% - 44px - env(safe-area-inset-top) - 50px - env(safe-area-inset-bottom));
+                }</style><style type="text/css">@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container[data-v-b237504c] {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 30px 20px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.header[data-v-b237504c] {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.title[data-v-b237504c] {
+  font-size: 24px;
+  font-weight: bold;
+  color: #282828;
+  display: block;
+}
+.subtitle[data-v-b237504c] {
+  font-size: 16px;
+  color: #999;
+  margin-top: 10px;
+  display: block;
+}
+.form-wrapper[data-v-b237504c] {
+  width: 100%;
+}
+.input-item[data-v-b237504c] {
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 0.5px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.input[data-v-b237504c] {
+  flex: 1;
+  font-size: 16px;
+  color: #282828;
+  padding: 10px 0;
+}
+.login-btn[data-v-b237504c] {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  background: #FF6400;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 17px;
+  margin-top: 30px;
+  box-shadow: 0 5px 10px -5px #FF6400;
+  transition: all 0.3s ease;
+}
+.login-btn[data-v-b237504c]:after {
+  border: none;
+}
+.login-btn[data-v-b237504c]:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  box-shadow: 0 3px 7px -4px #FF6400;
+}
+.extra-links[data-v-b237504c] {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+.register-link[data-v-b237504c],
+.forgot-pwd-link[data-v-b237504c] {
+  font-size: 14px;
+  color: #999;
+}</style></head>
+
+    <body class="uni-body pages-login-login">
+        <noscript>
+            <strong>Please enable JavaScript to continue.</strong>
+        </noscript>
+        <uni-app class="uni-app--maxwidth"><uni-page data-page="pages/login/login"><uni-page-head uni-page-head-type="default"><div class="uni-page-head" style="background-color: rgb(248, 248, 248); color: rgb(0, 0, 0);"><div class="uni-page-head-hd"><div class="uni-page-head-btn" style="display: none;"><i class="uni-btn-icon" style="color: rgb(0, 0, 0); font-size: 27px;"></i></div><div class="uni-page-head-ft"></div></div><div class="uni-page-head-bd"><div class="uni-page-head__title" style="font-size: 16px; opacity: 1;"><!----> 登录 </div></div><!----><div class="uni-page-head-ft"></div></div><div class="uni-placeholder"></div></uni-page-head><!----><uni-page-wrapper><uni-page-body><uni-view data-v-b237504c="" class="container"><uni-view data-v-b237504c="" class="header"><uni-text data-v-b237504c="" class="title"><span>欢迎登录拼车系统</span></uni-text><uni-text data-v-b237504c="" class="subtitle"><span>随时随地，畅享出行</span></uni-text></uni-view><uni-view data-v-b237504c="" class="form-wrapper"><uni-view data-v-b237504c="" class="input-item"><uni-input data-v-b237504c="" class="input"><div class="uni-input-wrapper"><div class="uni-input-placeholder input-placeholder" data-v-b237504c="">请输入手机号</div><input maxlength="11" step="0.000000000000000001" enterkeyhint="done" pattern="[0-9]*" autocomplete="off" type="number" class="uni-input-input"><!----></div></uni-input></uni-view><uni-view data-v-b237504c="" class="input-item"><uni-input data-v-b237504c="" class="input"><div class="uni-input-wrapper"><div class="uni-input-placeholder input-placeholder" data-v-b237504c="">请输入密码</div><input maxlength="140" step="" enterkeyhint="done" autocomplete="off" type="password" class="uni-input-input"><!----></div></uni-input></uni-view><uni-button data-v-b237504c="" class="login-btn">登 录</uni-button><uni-view data-v-b237504c="" class="extra-links"><uni-text data-v-b237504c="" class="register-link"><span>注册新账号</span></uni-text></uni-view></uni-view></uni-view></uni-page-body></uni-page-wrapper></uni-page><!----><!----><uni-actionsheet><div class="uni-mask uni-actionsheet__mask" style="display: none;"></div><div class="uni-actionsheet"><div class="uni-actionsheet__menu"><!----><!----><div style="max-height: 260px; overflow: hidden;"><div style="transform: translateY(0px) translateZ(0px);"></div></div></div><div class="uni-actionsheet__action"><div class="uni-actionsheet__cell" style="color: rgb(0, 0, 0);"> 取消 </div></div><div></div></div><!----></uni-actionsheet><uni-modal style="display: none;"><div class="uni-mask"></div><div class="uni-modal"><!----><div class="uni-modal__bd"></div><div class="uni-modal__ft"><div class="uni-modal__btn uni-modal__btn_default" style="color: rgb(0, 0, 0);"> Cancel </div><div class="uni-modal__btn uni-modal__btn_primary" style="color: rgb(0, 122, 255);"> OK </div></div></div><!----></uni-modal><!----><!----></uni-app>
+        <!-- built files will be auto injected -->
+    <script type="text/javascript" src="/static/js/chunk-vendors.js"></script><script type="text/javascript" src="/static/js/index.js"></script><div style="position: absolute; left: 0px; top: 0px; width: 0px; height: 0px; z-index: -1; overflow: hidden; visibility: hidden;"><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-top);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 400px; height: 400px;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-top);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 250%; height: 250%;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-left);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 400px; height: 400px;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-left);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 250%; height: 250%;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-right);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 400px; height: 400px;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-right);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 250%; height: 250%;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-bottom);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 400px; height: 400px;"></div></div><div style="position: absolute; width: 100px; height: 200px; box-sizing: border-box; overflow: hidden; padding-bottom: env(safe-area-inset-bottom);"><div style="transition: all; animation: auto ease 0s 1 normal none running none; width: 250%; height: 250%;"></div></div></div>
+
+
+        <script>
+        (function () {
+  var userAgent = navigator.userAgent
+  window.addEventListener('resize', function () {
+    if (navigator.userAgent !== userAgent) {
+      /* eslint-disable no-undef */
+      location.reload()
+    }
+  })
+})()
+
+        </script>
+        </body></html>

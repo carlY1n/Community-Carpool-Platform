@@ -1,0 +1,14 @@
+{
+  "test_time": "2025-06-16T00:21:05.383971",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "win32",
+  "tests": {
+    "imports": true,
+    "backend": true,
+    "files": true,
+    "config": true,
+    "data_generator": true,
+    "scenarios": true
+  },
+  "overall_result": "PASS"
+}

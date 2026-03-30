@@ -1,0 +1,828 @@
+{
+  "project": {
+    "name": "拼车系统API测试",
+    "description": "基于Spring Boot的移动端私家车拼车软件系统API接口测试",
+    "baseUrl": "http://localhost:8888",
+    "version": "1.0.0"
+  },
+  "environments": [
+    {
+      "name": "开发环境",
+      "baseUrl": "http://localhost:8888",
+      "variables": []
+    },
+    {
+      "name": "测试环境", 
+      "baseUrl": "http://test-server:8888",
+      "variables": []
+    }
+  ],
+  "folders": [
+    {
+      "name": "用户管理",
+      "description": "用户注册、登录、个人信息管理相关接口"
+    },
+    {
+      "name": "行程管理",
+      "description": "发布行程、搜索行程、管理行程相关接口"
+    },
+    {
+      "name": "订单管理", 
+      "description": "下单、确认订单、查询订单相关接口"
+    },
+    {
+      "name": "投诉管理",
+      "description": "提交投诉、处理投诉相关接口"
+    },
+    {
+      "name": "管理员接口",
+      "description": "管理员专用接口"
+    }
+  ],
+  "apis": [
+    {
+      "folder": "用户管理",
+      "name": "用户注册",
+      "method": "POST",
+      "url": "/api/user/register",
+      "description": "新用户注册接口",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "username": "测试用户",
+          "password": "123456",
+          "phone": "13800138000",
+          "realName": "张三",
+          "idCard": "310101199001011234",
+          "userType": "PASSENGER"
+        }
+      },
+      "tests": [
+        {
+          "name": "注册成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "注册成功"
+            }
+          }
+        },
+        {
+          "name": "手机号已注册",
+          "body": {
+            "username": "测试用户2",
+            "password": "123456", 
+            "phone": "13800138000",
+            "realName": "李四",
+            "idCard": "310101199001011235",
+            "userType": "DRIVER"
+          },
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 400,
+              "msg": "手机号已注册"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "用户管理",
+      "name": "用户登录",
+      "method": "POST", 
+      "url": "/api/user/login",
+      "description": "用户登录接口",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "phone": "13800138000",
+          "password": "123456"
+        }
+      },
+      "tests": [
+        {
+          "name": "登录成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "登录成功"
+            }
+          }
+        },
+        {
+          "name": "密码错误",
+          "body": {
+            "phone": "13800138000",
+            "password": "wrong_password"
+          },
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 400,
+              "msg": "手机号或密码错误"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "用户管理",
+      "name": "获取用户类型",
+      "method": "GET",
+      "url": "/api/user/types",
+      "description": "获取用户类型枚举",
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "用户管理",
+      "name": "获取用户信息",
+      "method": "GET",
+      "url": "/api/user/{userId}/profile",
+      "description": "根据用户ID获取用户详细信息",
+      "pathParams": {
+        "userId": "1"
+      },
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "获取用户信息成功"
+            }
+          }
+        },
+        {
+          "name": "用户不存在",
+          "pathParams": {
+            "userId": "999999"
+          },
+          "expect": {
+            "statusCode": 404,
+            "body": {
+              "code": 404
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "用户管理",
+      "name": "更新用户信息",
+      "method": "PUT",
+      "url": "/api/user/{userId}/profile",
+      "description": "更新用户个人信息",
+      "pathParams": {
+        "userId": "1"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "username": "更新后用户名",
+          "realName": "更新后真实姓名"
+        }
+      },
+      "tests": [
+        {
+          "name": "更新成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "用户信息更新成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "用户管理",
+      "name": "修改密码",
+      "method": "PUT",
+      "url": "/api/user/{userId}/password",
+      "description": "修改用户密码",
+      "pathParams": {
+        "userId": "1"
+      },
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "oldPassword": "123456",
+          "newPassword": "new123456"
+        }
+      },
+      "tests": [
+        {
+          "name": "修改成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "密码修改成功"
+            }
+          }
+        },
+        {
+          "name": "旧密码错误",
+          "body": {
+            "oldPassword": "wrong_password",
+            "newPassword": "new123456"
+          },
+          "expect": {
+            "statusCode": 400,
+            "body": {
+              "code": 400,
+              "msg": "旧密码不正确"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "行程管理",
+      "name": "搜索行程",
+      "method": "GET",
+      "url": "/api/trip/search",
+      "description": "根据起终点和时间搜索行程",
+      "queryParams": {
+        "startLng": "121.473701",
+        "startLat": "31.230416",
+        "endLng": "121.445221",
+        "endLat": "31.213354",
+        "departureTime": "2024-12-20"
+      },
+      "tests": [
+        {
+          "name": "搜索成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "行程管理",
+      "name": "发布行程",
+      "method": "POST",
+      "url": "/api/trip/publish",
+      "description": "司机发布新行程",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "driverId": 1,
+          "carId": 1,
+          "startLocation": "上海市黄浦区人民广场",
+          "startLng": 121.473701,
+          "startLat": 31.230416,
+          "endLocation": "上海市静安区静安寺",
+          "endLng": 121.445221,
+          "endLat": 31.213354,
+          "departureTime": "2024-12-20T09:00:00",
+          "price": 25.0,
+          "seatAvailable": 3
+        }
+      },
+      "tests": [
+        {
+          "name": "发布成功",
+          "expect": {
+            "statusCode": 200
+          }
+        },
+        {
+          "name": "参数不完整",
+          "body": {
+            "driverId": 1,
+            "startLocation": "上海市黄浦区人民广场"
+          },
+          "expect": {
+            "statusCode": 400
+          }
+        }
+      ]
+    },
+    {
+      "folder": "行程管理",
+      "name": "获取行程详情",
+      "method": "GET",
+      "url": "/api/trip/{id}",
+      "description": "根据ID获取行程详情",
+      "pathParams": {
+        "id": "1"
+      },
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "行程管理",
+      "name": "获取司机行程列表",
+      "method": "GET",
+      "url": "/api/trip/driver/{driverId}",
+      "description": "获取指定司机的所有行程",
+      "pathParams": {
+        "driverId": "1"
+      },
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "获取成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "行程管理",
+      "name": "取消行程",
+      "method": "POST",
+      "url": "/api/trip/cancel/{tripId}",
+      "description": "司机取消已发布的行程",
+      "pathParams": {
+        "tripId": "1"
+      },
+      "queryParams": {
+        "driverId": "1"
+      },
+      "tests": [
+        {
+          "name": "取消成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "行程已取消"
+            }
+          }
+        },
+        {
+          "name": "权限不足",
+          "queryParams": {
+            "driverId": "2"
+          },
+          "expect": {
+            "statusCode": 403,
+            "body": {
+              "code": 403
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "行程管理",
+      "name": "删除行程",
+      "method": "DELETE",
+      "url": "/api/trip/delete/{tripId}",
+      "description": "司机删除行程",
+      "pathParams": {
+        "tripId": "1"
+      },
+      "queryParams": {
+        "driverId": "1"
+      },
+      "tests": [
+        {
+          "name": "删除成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "行程删除成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "订单管理",
+      "name": "申请订单",
+      "method": "POST",
+      "url": "/api/order/apply",
+      "description": "乘客申请订单",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "tripId": 1,
+          "passengerId": 2,
+          "seatCount": 1,
+          "amount": "25.00"
+        }
+      },
+      "tests": [
+        {
+          "name": "申请成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "订单管理",
+      "name": "确认订单",
+      "method": "POST",
+      "url": "/api/order/confirm",
+      "description": "确认订单",
+      "queryParams": {
+        "orderId": "1"
+      },
+      "tests": [
+        {
+          "name": "确认成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "订单确认成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "订单管理",
+      "name": "取消订单",
+      "method": "POST",
+      "url": "/api/order/cancel",
+      "description": "取消订单",
+      "queryParams": {
+        "orderId": "1"
+      },
+      "tests": [
+        {
+          "name": "取消成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "订单管理",
+      "name": "获取订单详情",
+      "method": "GET",
+      "url": "/api/order/get",
+      "description": "根据订单ID获取订单详情",
+      "queryParams": {
+        "orderId": "1"
+      },
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "订单管理",
+      "name": "获取乘客订单列表",
+      "method": "GET", 
+      "url": "/api/order/passenger",
+      "description": "获取乘客的所有订单",
+      "queryParams": {
+        "passengerId": "2"
+      },
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "订单管理",
+      "name": "获取已确认订单",
+      "method": "GET",
+      "url": "/api/order/getConfirmOrder", 
+      "description": "获取乘客已确认的订单",
+      "queryParams": {
+        "passengerId": "2"
+      },
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "投诉管理",
+      "name": "提交投诉",
+      "method": "POST",
+      "url": "/api/complaint/add",
+      "description": "用户提交投诉",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "orderId": 1,
+          "complainantId": 2,
+          "content": "司机态度不好，行程中途改变路线"
+        }
+      },
+      "tests": [
+        {
+          "name": "提交成功",
+          "expect": {
+            "statusCode": 200
+          }
+        },
+        {
+          "name": "参数不完整",
+          "body": {
+            "orderId": 1
+          },
+          "expect": {
+            "statusCode": 400
+          }
+        }
+      ]
+    },
+    {
+      "folder": "投诉管理",
+      "name": "根据订单查询投诉",
+      "method": "GET",
+      "url": "/api/complaint/order/{orderId}",
+      "description": "根据订单ID查询投诉记录",
+      "pathParams": {
+        "orderId": "1"
+      },
+      "tests": [
+        {
+          "name": "查询成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "投诉管理",
+      "name": "根据用户查询投诉",
+      "method": "GET",
+      "url": "/api/complaint/user/{userId}",
+      "description": "根据用户ID查询其提交的投诉",
+      "pathParams": {
+        "userId": "2"
+      },
+      "tests": [
+        {
+          "name": "查询成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "投诉管理",
+      "name": "获取待处理投诉",
+      "method": "GET",
+      "url": "/api/complaint/pending",
+      "description": "获取所有待处理的投诉",
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200
+          }
+        }
+      ]
+    },
+    {
+      "folder": "管理员接口",
+      "name": "获取所有用户",
+      "method": "GET",
+      "url": "/api/user/admin/list",
+      "description": "管理员获取所有用户列表",
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "管理员接口",
+      "name": "修改用户状态",
+      "method": "POST",
+      "url": "/api/user/admin/status",
+      "description": "管理员修改用户状态",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "type": "json",
+        "data": {
+          "userId": 1,
+          "status": 0
+        }
+      },
+      "tests": [
+        {
+          "name": "修改成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "修改成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "管理员接口",
+      "name": "获取所有行程",
+      "method": "GET",
+      "url": "/api/trip/admin/list",
+      "description": "管理员获取所有行程列表",
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "获取成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "管理员接口",
+      "name": "管理员删除行程",
+      "method": "DELETE",
+      "url": "/api/trip/admin/delete/{tripId}",
+      "description": "管理员删除指定行程",
+      "pathParams": {
+        "tripId": "1"
+      },
+      "tests": [
+        {
+          "name": "删除成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "行程删除成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "管理员接口",
+      "name": "获取所有投诉",
+      "method": "GET",
+      "url": "/api/complaint/admin/list",
+      "description": "管理员获取所有投诉列表",
+      "tests": [
+        {
+          "name": "获取成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "获取投诉列表成功"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "folder": "管理员接口",
+      "name": "处理投诉",
+      "method": "PUT",
+      "url": "/api/complaint/admin/process/{id}",
+      "description": "管理员处理投诉",
+      "pathParams": {
+        "id": "1"
+      },
+      "tests": [
+        {
+          "name": "处理成功",
+          "expect": {
+            "statusCode": 200,
+            "body": {
+              "code": 200,
+              "msg": "处理投诉成功"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "testSuites": [
+    {
+      "name": "用户功能完整流程测试",
+      "description": "测试用户注册、登录、信息管理的完整流程",
+      "tests": [
+        "用户注册",
+        "用户登录", 
+        "获取用户信息",
+        "更新用户信息",
+        "修改密码"
+      ]
+    },
+    {
+      "name": "拼车业务完整流程测试",
+      "description": "测试从发布行程到完成订单的完整流程",
+      "tests": [
+        "发布行程",
+        "搜索行程",
+        "申请订单",
+        "确认订单",
+        "获取订单详情"
+      ]
+    },
+    {
+      "name": "投诉处理流程测试",
+      "description": "测试投诉提交和处理的完整流程",
+      "tests": [
+        "提交投诉",
+        "根据订单查询投诉",
+        "获取待处理投诉",
+        "处理投诉"
+      ]
+    }
+  ],
+  "globalVariables": [
+    {
+      "name": "userId",
+      "value": "1",
+      "description": "测试用户ID"
+    },
+    {
+      "name": "tripId", 
+      "value": "1",
+      "description": "测试行程ID"
+    },
+    {
+      "name": "orderId",
+      "value": "1", 
+      "description": "测试订单ID"
+    }
+  ],
+  "documentation": {
+    "description": "## 拼车系统API接口文档\n\n### 系统概述\n这是一个基于Spring Boot开发的移动端私家车拼车软件系统，提供用户管理、行程发布、订单处理、投诉管理等功能。\n\n### 通用响应格式\n```json\n{\n  \"code\": 200,\n  \"msg\": \"操作成功\",\n  \"data\": {}\n}\n```\n\n### 状态码说明\n- 200: 操作成功\n- 400: 请求参数错误\n- 403: 权限不足\n- 404: 资源不存在\n- 500: 服务器内部错误\n\n### 用户类型\n- PASSENGER: 乘客\n- DRIVER: 司机/车主\n- ADMIN: 管理员\n\n### 行程状态\n- 1: 发布中\n- 2: 进行中\n- 3: 已完成\n- 4: 已取消\n\n### 订单状态\n- 0: 待确认\n- 1: 已确认\n- 2: 已取消\n- 3: 已完成\n\n### 投诉状态\n- 0: 待处理\n- 1: 已处理\n\n### 使用说明\n1. 首先进行用户注册和登录\n2. 司机可以发布行程，乘客可以搜索和预订行程\n3. 订单需要经过申请、确认等步骤\n4. 用户可以对行程和服务进行投诉\n5. 管理员可以管理用户、行程和处理投诉"
+  }
+}

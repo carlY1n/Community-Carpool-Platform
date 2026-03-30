@@ -1,0 +1,176 @@
+2025-06-16 23:04:22,459 - utils.driver_manager - INFO - 找到本地ChromeDriver: D:\Uniapp\MobilePrivateCarCarpoolingSoftwareSystem\selenium_tests\chromedriver-win64\chromedriver.exe
+2025-06-16 23:04:22,461 - utils.driver_manager - INFO - 使用本地ChromeDriver: D:\Uniapp\MobilePrivateCarCarpoolingSoftwareSystem\selenium_tests\chromedriver-win64\chromedriver.exe
+2025-06-16 23:04:25,202 - utils.driver_manager - INFO - ChromeDriver创建成功
+2025-06-16 23:04:25,463 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_config.py::TestConfiguration::test_config_values_teardown.png
+2025-06-16 23:04:25,706 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_config.py::TestConfiguration::test_test_users_config_teardown.png
+2025-06-16 23:04:25,938 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_config.py::TestConfiguration::test_page_config_teardown.png
+2025-06-16 23:04:26,176 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_config.py::TestConfiguration::test_chromedriver_paths_teardown.png
+2025-06-16 23:04:26,187 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:04:31,434 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_trip_page_load_teardown.png
+2025-06-16 23:04:31,447 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:04:32,478 - pages.login_page - INFO - 开始登录，手机号: 13800138002
+2025-06-16 23:05:46,305 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:05:46,306 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:05:46,670 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_publish_trip_page_load_teardown.png
+2025-06-16 23:05:46,682 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:05:48,745 - pages.base_page - INFO - 搜索行程：上海市黄浦区人民广场 -> 上海市静安区静安寺
+2025-06-16 23:05:49,035 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:05:49,035 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:05:49,424 - utils.driver_manager - INFO - 截图已保存: screenshots\test_search_trips_basic_failed.png
+2025-06-16 23:05:50,119 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_trips_basic_teardown.png
+2025-06-16 23:05:50,132 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:05:51,495 - pages.base_page - INFO - 搜索行程：上海市浦东新区 -> 上海市徐汇区
+2025-06-16 23:05:51,742 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:05:51,742 - pages.base_page - ERROR - 选择出发时间失败
+2025-06-16 23:05:52,096 - utils.driver_manager - INFO - 截图已保存: screenshots\test_search_trips_with_time_failed.png
+2025-06-16 23:05:52,475 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_trips_with_time_teardown.png
+2025-06-16 23:05:52,485 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:05:53,512 - pages.login_page - INFO - 开始登录，手机号: 13800138002
+2025-06-16 23:07:07,394 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:07:07,395 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:07:07,828 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_publish_trip_complete_flow_teardown.png
+2025-06-16 23:07:07,840 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:07:08,861 - pages.login_page - INFO - 开始登录，手机号: 13800138002
+2025-06-16 23:08:22,749 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:08:22,750 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:08:23,046 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_publish_trip_missing_required_fields_teardown.png
+2025-06-16 23:08:23,058 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:08:24,083 - pages.login_page - INFO - 开始登录，手机号: 13800138002
+2025-06-16 23:09:37,970 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:09:37,970 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:09:38,315 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_publish_trip_invalid_price_teardown.png
+2025-06-16 23:09:38,328 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:09:39,353 - pages.login_page - INFO - 开始登录，手机号: 13800138002
+2025-06-16 23:10:53,116 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:10:53,116 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:10:53,435 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_publish_trip_invalid_seat_count_teardown.png
+2025-06-16 23:10:53,445 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:10:54,473 - pages.login_page - INFO - 开始登录，手机号: 13800138001
+2025-06-16 23:12:08,314 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:12:08,314 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:12:08,699 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_and_book_flow_teardown.png
+2025-06-16 23:12:08,709 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:12:10,473 - pages.base_page - INFO - 搜索行程： -> 上海市静安区静安寺
+2025-06-16 23:12:10,678 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:10,678 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:10,678 - pages.base_page - INFO - 搜索行程：上海市黄浦区人民广场 -> 
+2025-06-16 23:12:10,927 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:10,928 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:10,929 - pages.base_page - INFO - 搜索行程： -> 
+2025-06-16 23:12:11,114 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:11,114 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:11,430 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_empty_locations_teardown.png
+2025-06-16 23:12:11,442 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:12:12,820 - pages.base_page - INFO - 搜索行程：上海市黄浦区人民广场 -> 上海市黄浦区人民广场
+2025-06-16 23:12:13,114 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:13,114 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:16,426 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_same_start_end_location_teardown.png
+2025-06-16 23:12:16,440 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:12:17,782 - pages.base_page - INFO - 搜索行程：不存在的地点A -> 不存在的地点B
+2025-06-16 23:12:18,059 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:18,059 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:20,061 - pages.base_page - INFO - 搜索行程：火星基地 -> 月球表面
+2025-06-16 23:12:20,351 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:20,352 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:22,352 - pages.base_page - INFO - 搜索行程：随机字符串123 -> 另一个随机字符串456
+2025-06-16 23:12:22,629 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:22,629 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:24,939 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_non_existent_locations_teardown.png
+2025-06-16 23:12:24,950 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:12:26,305 - pages.base_page - INFO - 搜索行程：上海市黄浦区人民广场 -> 上海市静安区静安寺
+2025-06-16 23:12:26,586 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:26,586 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:26,916 - utils.driver_manager - INFO - 截图已保存: screenshots\test_multiple_consecutive_searches_failed.png
+2025-06-16 23:12:27,224 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_multiple_consecutive_searches_teardown.png
+2025-06-16 23:12:27,236 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#/pages/searchTrip/searchTrip
+2025-06-16 23:12:28,577 - pages.base_page - INFO - 搜索行程：上海市黄浦区人民广场 -> 上海市静安区静安寺
+2025-06-16 23:12:28,881 - pages.base_page - ERROR - 点击元素失败: 'tuple' object has no attribute 'is_displayed'
+2025-06-16 23:12:28,881 - pages.base_page - ERROR - 点击搜索按钮失败
+2025-06-16 23:12:29,182 - utils.driver_manager - INFO - 截图已保存: screenshots\test_search_response_time_failed.png
+2025-06-16 23:12:29,498 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_search_response_time_teardown.png
+2025-06-16 23:12:29,509 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:12:30,529 - pages.login_page - INFO - 开始登录，手机号: 13800138002
+2025-06-16 23:13:44,378 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:13:44,378 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:13:44,689 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_trip_management.py::TestTripManagement::test_publish_then_search_own_trip_teardown.png
+2025-06-16 23:13:44,703 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:13:56,588 - utils.driver_manager - INFO - 截图已保存: screenshots\test_login_page_load_failed.png
+2025-06-16 23:13:56,888 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_login_page_load_teardown.png
+2025-06-16 23:13:56,901 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:13:58,209 - utils.driver_manager - INFO - 截图已保存: screenshots\test_register_page_load_failed.png
+2025-06-16 23:13:58,511 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_register_page_load_teardown.png
+2025-06-16 23:13:58,522 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:13:59,545 - pages.login_page - INFO - 开始登录，手机号: 13800138001
+2025-06-16 23:15:13,413 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:15:13,413 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:15:13,741 - utils.driver_manager - INFO - 截图已保存: screenshots\test_valid_login_failed.png
+2025-06-16 23:15:14,038 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_valid_login_teardown.png
+2025-06-16 23:15:14,050 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:15:15,077 - pages.login_page - INFO - 开始登录，手机号: 13800138001
+2025-06-16 23:16:28,888 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:16:28,888 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:17:39,431 - utils.driver_manager - INFO - 截图已保存: screenshots\test_invalid_login_wrong_password_failed.png
+2025-06-16 23:17:39,715 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_invalid_login_wrong_password_teardown.png
+2025-06-16 23:17:39,727 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:17:40,754 - pages.login_page - INFO - 开始登录，手机号: 19999999999
+2025-06-16 23:18:54,647 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:18:54,647 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:18:54,934 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_invalid_login_wrong_phone_teardown.png
+2025-06-16 23:18:54,946 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:18:55,968 - pages.login_page - INFO - 开始登录，手机号: 
+2025-06-16 23:19:27,550 - pages.login_page - ERROR - 无法找到输入框: password_input
+2025-06-16 23:19:27,550 - pages.login_page - ERROR - 填写密码失败
+2025-06-16 23:19:27,551 - pages.login_page - INFO - 开始登录，手机号: 13800138000
+2025-06-16 23:21:02,465 - pages.login_page - ERROR - 无法点击元素: login_button
+2025-06-16 23:21:02,465 - pages.login_page - ERROR - 点击登录按钮失败
+2025-06-16 23:21:02,465 - pages.login_page - INFO - 开始登录，手机号: 
+2025-06-16 23:21:55,102 - pages.login_page - ERROR - 无法点击元素: login_button
+2025-06-16 23:21:55,102 - pages.login_page - ERROR - 点击登录按钮失败
+2025-06-16 23:21:55,423 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_empty_login_fields_teardown.png
+2025-06-16 23:21:55,435 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:21:56,461 - pages.register_page - INFO - 开始注册用户: test_passenger_1750087316
+2025-06-16 23:22:49,324 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:22:49,324 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:22:49,697 - utils.driver_manager - INFO - 截图已保存: screenshots\test_valid_passenger_registration_failed.png
+2025-06-16 23:22:50,043 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_valid_passenger_registration_teardown.png
+2025-06-16 23:22:50,052 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:22:51,080 - pages.register_page - INFO - 开始注册用户: test_driver_1750087371
+2025-06-16 23:23:43,865 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:23:43,865 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:23:44,236 - utils.driver_manager - INFO - 截图已保存: screenshots\test_valid_driver_registration_failed.png
+2025-06-16 23:23:44,594 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_valid_driver_registration_teardown.png
+2025-06-16 23:23:44,606 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:23:45,634 - pages.register_page - INFO - 开始注册用户: duplicate_user_1750087425
+2025-06-16 23:24:38,429 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:24:38,429 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:25:49,002 - utils.driver_manager - INFO - 截图已保存: screenshots\test_duplicate_phone_registration_failed.png
+2025-06-16 23:25:49,307 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_duplicate_phone_registration_teardown.png
+2025-06-16 23:25:49,318 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:25:50,340 - pages.register_page - INFO - 开始注册用户: test_user_1750087550
+2025-06-16 23:26:43,150 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:26:43,150 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:26:43,457 - utils.driver_manager - INFO - 截图已保存: screenshots\test_invalid_phone_format_registration_failed.png
+2025-06-16 23:26:43,779 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_invalid_phone_format_registration_teardown.png
+2025-06-16 23:26:43,792 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:26:44,819 - pages.register_page - INFO - 开始注册用户: test_user_1750087604
+2025-06-16 23:27:37,591 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:27:37,591 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:27:37,890 - utils.driver_manager - INFO - 截图已保存: screenshots\test_invalid_id_card_registration_failed.png
+2025-06-16 23:27:38,188 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_invalid_id_card_registration_teardown.png
+2025-06-16 23:27:38,200 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:27:39,224 - pages.register_page - INFO - 开始注册用户: 
+2025-06-16 23:28:21,333 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:28:21,333 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:28:21,647 - utils.driver_manager - INFO - 截图已保存: screenshots\test_empty_required_fields_registration_failed.png
+2025-06-16 23:28:21,986 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_empty_required_fields_registration_teardown.png
+2025-06-16 23:28:21,999 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/register/register
+2025-06-16 23:28:23,021 - pages.register_page - INFO - 开始注册用户: test_reg_login_1750087703
+2025-06-16 23:29:15,844 - pages.register_page - ERROR - 无法找到输入框: phone_input
+2025-06-16 23:29:15,844 - pages.register_page - ERROR - 填写手机号失败
+2025-06-16 23:29:16,205 - utils.driver_manager - INFO - 截图已保存: screenshots\test_login_after_registration_failed.png
+2025-06-16 23:29:16,529 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_login_after_registration_teardown.png
+2025-06-16 23:29:16,540 - pages.base_page - INFO - 导航到页面: http://localhost:8080/#http://localhost:8080/#/pages/login/login
+2025-06-16 23:30:10,224 - pages.login_page - ERROR - 无法点击元素: register_link
+2025-06-16 23:30:10,534 - utils.driver_manager - INFO - 截图已保存: screenshots\test_navigation_between_login_register_failed.png
+2025-06-16 23:30:10,839 - utils.driver_manager - INFO - 截图已保存: screenshots\tests/test_user_auth.py::TestUserAuth::test_navigation_between_login_register_teardown.png
+2025-06-16 23:30:13,510 - utils.driver_manager - INFO - ChromeDriver已退出
